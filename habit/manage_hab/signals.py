@@ -3,6 +3,7 @@ from django.dispatch import receiver
 from .models import HabitProgress
 from .tasks import send_reminder_notification
 
+
 @receiver(post_save, sender=HabitProgress)
 def habit_progress_created(sender, instance, created, **kwargs):
     if created:
